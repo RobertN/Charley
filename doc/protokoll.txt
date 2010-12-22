@@ -2,7 +2,7 @@ Nätverksprotokoll
 
 - Initieringsfas:
 Klient ansluter, skickar hälsning -> 
-Server skickar OK för att starta kommunikationen -> 
+Server skickar OK -> 
 Klient skickar namn -> 
 Server svarar OK eller BUSY.
 
