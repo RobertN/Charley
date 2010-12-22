@@ -1,0 +1,41 @@
+Nätverksprotokoll
+
+- Initieringsfas:
+Klient ansluter, skickar hälsning -> 
+Server skickar OK för att starta kommunikationen -> 
+Klient skickar namn -> 
+Server svarar OK eller BUSY.
+
+Om servern svarar BUSY förväntas klienten avsluta anslutningen och göra ett nytt försök med ett annat namn.
+
+Ex:
+
+K: HELO
+S: OK
+K: PlayerName
+S: BUSY
+
+K: HELO
+S: OK
+K: PlayerName2
+S: OK
+
+Namn är max 16 tecken (16 byte?).
+
+- Initiera spelfas:
+Klient efterfrågar lista på alla anslutna spelare ->
+Server skickar antal spelare (max 255) ->
+Server skickar namn och unikt ID [0-255] för varje spelare ->
+Klient svarar OK när den mottagit så många spelare som angivet från start.
+
+Ex:
+
+K: LIST
+S: 2
+S: 0 
+S: Player1
+S: 1
+S: Player2
+K: OK
+
+
